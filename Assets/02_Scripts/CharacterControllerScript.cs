@@ -9,7 +9,7 @@ public class CharacterController : MonoBehaviour
     float _horizontal = 0f;
     bool _jumpRequested = false;
     bool _isJumping = false;
-    int _gravity = 1;
+    int _gravity = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,7 +32,7 @@ public class CharacterController : MonoBehaviour
     }
     void MoveCharacter()
     {
-        Debug.Log("horizontal = " +  _horizontal);
+        transform.position = new Vector2(transform.position.x + _horizontal * Time.deltaTime,transform.position.y);
     }
     void ApplyGravity()
     {
