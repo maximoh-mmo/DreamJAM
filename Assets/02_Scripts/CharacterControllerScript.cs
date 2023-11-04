@@ -1,3 +1,4 @@
+using System.Diagnostics.Tracing;
 using UnityEditor.XR;
 using UnityEngine;
 
@@ -6,22 +7,23 @@ public class CharacterController : MonoBehaviour
     float _jumpModifier = 12f;
     float _speedMultiplier = 4f;
     float _horizontal = 0f;
-    bool _tryInteract = false;
-    bool _jumpRequested = false;
-    bool _isJumping = false;
+    bool _tryInteract, _jumpRequested, _isJumping, _interactable = false;
     int _gravity = 1;
-    bool _interactable = false;
     Rigidbody2D rb;
     BoxCollider2D coll;
     [SerializeField]LayerMask _ground;
     float _gravityScale = 1f;
     float _fallingGravityScale = 3f;
-    [SerializeField] Collider2D _currentCollider=null;
+    SpriteRenderer sr;
+    PhysicsMaterial2D pm;
     // Start is called before the first frame update
     void Start()
     {
+       
+        sr = GetComponentInChildren<SpriteRenderer>();
         coll = GetComponent<BoxCollider2D>();
         rb = GetComponent<Rigidbody2D>();
+        pm = rb.sharedMaterial;
     }
 
     // Update is called once per frame
@@ -31,6 +33,7 @@ public class CharacterController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded()) { _jumpRequested = true; }
         _horizontal = Input.GetAxis("Horizontal");
         if (_horizontal != 0) { MoveCharacter(); }
+        if (_horizontal == 0) { StopCharacter(); }
         if (_jumpRequested && isGrounded()) { DoJump(); }
         if (Input.GetKeyDown(KeyCode.E)) { _tryInteract = true; }
         if (Input.GetKeyUp(KeyCode.E)) { _tryInteract = false; }
@@ -46,12 +49,25 @@ public class CharacterController : MonoBehaviour
         {
             rb.AddForce(Vector2.up * _jumpModifier, ForceMode2D.Impulse);
         }
+        rb.sharedMaterial = pm;
         _isJumping = true;
         _jumpRequested = false;
     }
     void MoveCharacter()
-    {
+    {   
+        if (_horizontal > 0)
+        {
+            sr.flipX = true;
+        }
+        if (_horizontal < 0)
+        {
+            sr.flipX = false;
+        }
         rb.velocity = new Vector2(_horizontal * _speedMultiplier, rb.velocity.y);
+    }
+    void StopCharacter()
+    {
+        rb.velocity = new Vector2(0f, rb.velocity.y);
     }
     void ApplyGravity()
     {
@@ -68,6 +84,7 @@ public class CharacterController : MonoBehaviour
     {
         if (Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, _ground))
         {
+            rb.sharedMaterial = null;
             _isJumping = false;
             return true;
         }
@@ -76,11 +93,8 @@ public class CharacterController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("collision");
         if (collision.gameObject.tag == "Interactable" && _tryInteract)
         {
-            _currentCollider = collision;
-
             _interactable = true;
         }
     }
@@ -95,7 +109,6 @@ public class CharacterController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Interactable" && _tryInteract)
         {
-            _currentCollider = null;
             _interactable = false;
         }
     }
