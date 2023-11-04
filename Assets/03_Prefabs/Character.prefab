@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1008847468947880476}
   m_Layer: 0
   m_Name: Character
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -50,6 +50,7 @@ MonoBehaviour:
   _ground:
     serializedVersion: 2
     m_Bits: 8
+  _currentCollider: {fileID: 0}
 --- !u!50 &5803951177479670230
 Rigidbody2D:
   serializedVersion: 4
