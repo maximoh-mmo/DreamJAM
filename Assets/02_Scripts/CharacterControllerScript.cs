@@ -1,14 +1,16 @@
+using UnityEditor.XR;
 using UnityEngine;
 
 public class CharacterController : MonoBehaviour
 {
-    float _jumpModifier = 1f;
-    float _speedMultiplier = 1f;
+    float _jumpModifier = 10f;
+    float _speedMultiplier = 4f;
     float _horizontal = 0f;
     bool _tryInteract = false;
     bool _jumpRequested = false;
     bool _isJumping = false;
     int _gravity = 1;
+    bool _interactable = false;
     Rigidbody2D rb;
     BoxCollider2D coll;
     [SerializeField]LayerMask _ground;
@@ -31,6 +33,7 @@ public class CharacterController : MonoBehaviour
         if (_jumpRequested && isGrounded()) { DoJump(); }
         if (Input.GetKeyDown(KeyCode.E)) { _tryInteract = true; }
         if (Input.GetKeyUp(KeyCode.E)) { _tryInteract = false; }
+        if (_interactable && _tryInteract) { TryInteract(); }
     }
     void DoJump()
     {
@@ -70,11 +73,25 @@ public class CharacterController : MonoBehaviour
         return false;
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (other.tag == "Interactable" && _tryInteract)
+        if (collision.gameObject.tag == "Interactable" && _tryInteract)
         {
-            TryInteract();
+            _interactable = true;
+        }
+    }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Interactable" && _tryInteract)
+        {
+            _interactable = true;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "Interactable" && _tryInteract)
+        {
+            _interactable = false;
         }
     }
 
