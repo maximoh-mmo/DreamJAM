@@ -3,12 +3,13 @@ using UnityEngine;
 public class CharacterController : MonoBehaviour
 {
     float _speed = 1f;
-    [SerializeField] float _jumpModifier = 1f;
-    [SerializeField] float _speedMultiplier = 1f;
+    float _jumpModifier = 1f;
+    float _speedMultiplier = 1f;
     float _horizontal = 0f;
-    [SerializeField] bool _jumpRequested = false;
-    [SerializeField] bool _isJumping = false;
-    [SerializeField] int _gravity = 1;
+    bool _tryInteract = false;
+    bool _jumpRequested = false;
+    bool _isJumping = false;
+    int _gravity = 1;
     Rigidbody2D rb;
     BoxCollider2D coll;
     [SerializeField]LayerMask _ground;
@@ -29,7 +30,8 @@ public class CharacterController : MonoBehaviour
         _horizontal = Input.GetAxis("Horizontal");
         if (_horizontal != 0) { MoveCharacter(); }
         if (_jumpRequested && isGrounded()) { DoJump(); }
-
+        if (Input.GetKeyDown(KeyCode.E)) { _tryInteract = true; }
+        if (Input.GetKeyUp(KeyCode.E)) { _tryInteract = false; }
     }
     void DoJump()
     {
@@ -67,5 +69,18 @@ public class CharacterController : MonoBehaviour
             return true;
         }
         return false;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Interactable" && _tryInteract)
+        {
+            TryInteract();
+        }
+    }
+
+    void TryInteract()
+    {
+        Debug.Log("Trying to do a thing");
     }
 }
