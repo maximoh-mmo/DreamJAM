@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class CharacterController : MonoBehaviour
 {
-    float _speed = 1f;
     float _jumpModifier = 1f;
     float _speedMultiplier = 1f;
     float _horizontal = 0f;
