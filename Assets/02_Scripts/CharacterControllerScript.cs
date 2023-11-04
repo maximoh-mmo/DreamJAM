@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class CharacterController : MonoBehaviour
 {
-    float _jumpModifier = 10f;
+    float _jumpModifier = 12f;
     float _speedMultiplier = 4f;
     float _horizontal = 0f;
     bool _tryInteract = false;
@@ -15,7 +15,8 @@ public class CharacterController : MonoBehaviour
     BoxCollider2D coll;
     [SerializeField]LayerMask _ground;
     float _gravityScale = 1f;
-    float _fallingGravityScale = 10f;
+    float _fallingGravityScale = 3f;
+    [SerializeField] Collider2D _currentCollider=null;
     // Start is called before the first frame update
     void Start()
     {
@@ -75,8 +76,11 @@ public class CharacterController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log("collision");
         if (collision.gameObject.tag == "Interactable" && _tryInteract)
         {
+            _currentCollider = collision;
+
             _interactable = true;
         }
     }
@@ -89,8 +93,9 @@ public class CharacterController : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Interactable" && _tryInteract)
+        if (collision.gameObject.tag == "Interactable" && _tryInteract)
         {
+            _currentCollider = null;
             _interactable = false;
         }
     }

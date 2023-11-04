@@ -12,6 +12,6 @@ public class CameraMovementScript : MonoBehaviour
     }
     void Update()
     {
-        _camera.transform.position = new Vector3(_character.transform.position.x, _camera.transform.position.y, -10);
+        _camera.transform.position = new Vector3(_character.transform.position.x, _character.transform.position.y, -15);
     }
 }
