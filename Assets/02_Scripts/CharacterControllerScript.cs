@@ -3,6 +3,7 @@ using UnityEngine;
 public class CharacterController : MonoBehaviour
 {
     float _speed = 1f;
+    [SerializeField] float _jumpModifier = 1f;
     [SerializeField] float _speedMultiplier = 1f;
     float _horizontal = 0f;
     bool _jumpRequested = false;
@@ -10,7 +11,7 @@ public class CharacterController : MonoBehaviour
     int _gravity = 0;
     Rigidbody2D rb;
     BoxCollider2D coll;
-    LayerMask _ground;
+    [SerializeField]LayerMask _ground;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +22,7 @@ public class CharacterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (_gravity!=0) { ApplyGravity(); }
+        // (_gravity!=0) { ApplyGravity(); }
         if (Input.GetKeyDown(KeyCode.Space)) { _jumpRequested = true; }
         _horizontal = Input.GetAxis("Horizontal");
         if (_horizontal != 0) { MoveCharacter(); }
@@ -30,7 +31,7 @@ public class CharacterController : MonoBehaviour
     void DoJump()
     {
         Debug.Log("I'm Jumping");
-
+        rb.AddForce(Vector2.up * _gravity * _jumpModifier, ForceMode2D.Impulse);
         _jumpRequested = false;
         _isJumping = true;
         
@@ -38,11 +39,10 @@ public class CharacterController : MonoBehaviour
     void MoveCharacter()
     {
         rb.velocity = new Vector2(_horizontal * _speedMultiplier, rb.velocity.y);
-        //        transform.position = new Vector2(transform.position.x + _horizontal * Time.deltaTime,transform.position.y);
     }
     void ApplyGravity()
-    {
-        transform.position = new Vector2(transform.position.x, transform.position.y -9.807f* _gravity * Time.deltaTime);
+    { 
+        rb.velocity = Vector2.up * -9.807f * _gravity * Time.deltaTime;
     }
     private bool isGrounded()
     {
