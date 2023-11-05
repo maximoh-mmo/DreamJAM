@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/01_Scenes/CityScene.unity
     guid: f73ff8b0b74d16b4099266cb37dd15e0
   - enabled: 1
+    path: Assets/01_Scenes/Beach Level.unity
+    guid: cacab1c7be1c8de46979bc3a5db2a803
+  - enabled: 1
     path: Assets/01_Scenes/Nightmare_Level.unity
     guid: 2fc26381d12c0a4498dffbc53045867a
   m_configObjects: {}

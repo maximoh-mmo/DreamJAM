@@ -852,6 +852,18 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6662564619701844890, guid: 3d68e10c1fa8cd54ba363d26e8afe6b7, type: 3}
+      propertyPath: _isJumping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6662564619701844890, guid: 3d68e10c1fa8cd54ba363d26e8afe6b7, type: 3}
+      propertyPath: _jumpModifier
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6662564619701844890, guid: 3d68e10c1fa8cd54ba363d26e8afe6b7, type: 3}
+      propertyPath: _speedMultiplier
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8116371637034414503, guid: 3d68e10c1fa8cd54ba363d26e8afe6b7, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.96
