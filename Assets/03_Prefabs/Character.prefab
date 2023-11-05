@@ -48,14 +48,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86d286236f1e3b04990798a148dd985d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _jumpModifier: 12
+  _speedMultiplier: 4
+  _horizontal: 0
   _tryInteract: 0
   _jumpRequested: 0
   _isGrounded: 0
   _isJumping: 0
   _interactable: 0
+  _interact: 0
+  _gravity: 1
   _ground:
     serializedVersion: 2
     m_Bits: 8
+  _gravityScale: 1
+  _fallingGravityScale: 3
+  _currentInteractable: {fileID: 0}
 --- !u!50 &5803951177479670230
 Rigidbody2D:
   serializedVersion: 4
@@ -92,7 +100,7 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 5359753198394949612}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: dee26c45de9c2a6479a87ffc3776cbf0, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
