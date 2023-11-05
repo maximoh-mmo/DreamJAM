@@ -28,6 +28,8 @@ public class InteractableSwitch : MonoBehaviour
             toDisable = GameObject.Find("DisableDuringDay");
             coconut = GameObject.Find("Coconut");
         }
+
+        toDisable.SetActive(false);
    
     }
     private void Update()
