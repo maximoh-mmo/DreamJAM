@@ -313,7 +313,7 @@ Transform:
   m_LocalScale: {x: 200, y: 10, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1266850535}
+  m_Father: {fileID: 2041592546}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &376062480
 BoxCollider2D:
@@ -651,8 +651,8 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 38058e701c900894ca8f5441802c4a18, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_PlayOnAwake: 0
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -765,7 +765,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 5bc0aedd516579340905378ca50423d0, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.05
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -914,7 +914,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7934381162245389500, guid: b8072ab388d6b704cb4cd3a19f15efb2, type: 3}
       propertyPath: _character
-      value:
+      value: 
       objectReference: {fileID: 1103202421}
     - target: {fileID: 8129390807710069178, guid: b8072ab388d6b704cb4cd3a19f15efb2, type: 3}
       propertyPath: m_Name
@@ -1325,7 +1325,7 @@ Transform:
   m_LocalScale: {x: 61.07, y: 61.07, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1266850535}
+  m_Father: {fileID: 2041592546}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &998082442
 Rigidbody2D:
@@ -1632,7 +1632,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 815174280}
-  m_Father: {fileID: 1266850535}
+  m_Father: {fileID: 2041592546}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1094877833
 BoxCollider2D:
@@ -1766,7 +1766,7 @@ Transform:
   m_LocalScale: {x: 20, y: 20, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1266850535}
+  m_Father: {fileID: 2041592546}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1130459707
 SpriteRenderer:
@@ -1942,19 +1942,7 @@ Transform:
   m_LocalPosition: {x: 2.5019045, y: 2.7999778, z: 0.032517526}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1372849981}
-  - {fileID: 1130459706}
-  - {fileID: 1758157792}
-  - {fileID: 1566907843}
-  - {fileID: 376062479}
-  - {fileID: 2107219757}
-  - {fileID: 2118374735}
-  - {fileID: 1896382448}
-  - {fileID: 1358965606}
-  - {fileID: 1094877832}
-  - {fileID: 1721338095}
-  - {fileID: 998082441}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1358965605
@@ -1989,7 +1977,7 @@ Transform:
   m_LocalScale: {x: 15, y: 15, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1266850535}
+  m_Father: {fileID: 2041592546}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1358965607
 SpriteRenderer:
@@ -2274,7 +2262,7 @@ Transform:
   m_LocalScale: {x: 20, y: 20, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1266850535}
+  m_Father: {fileID: 2041592546}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1372849982
 SpriteRenderer:
@@ -2385,9 +2373,6 @@ PrefabInstance:
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 3800571365969077995, guid: 4787c1b232726f94b84c5d287f7e57f0, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 173200400}
-    - targetCorrespondingSourceObject: {fileID: 3800571365969077995, guid: 4787c1b232726f94b84c5d287f7e57f0, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1372849981}
     - targetCorrespondingSourceObject: {fileID: 3800571365969077995, guid: 4787c1b232726f94b84c5d287f7e57f0, type: 3}
       insertIndex: -1
@@ -2437,7 +2422,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1144284444609082326, guid: e736b466884b7854a9d1b513fbdef13b, type: 3}
       propertyPath: _levelMusic
-      value:
+      value: 
       objectReference: {fileID: 658830635}
     - target: {fileID: 1144284444609082326, guid: e736b466884b7854a9d1b513fbdef13b, type: 3}
       propertyPath: _stepSource.Array.size
@@ -2445,15 +2430,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1144284444609082326, guid: e736b466884b7854a9d1b513fbdef13b, type: 3}
       propertyPath: _stepSource.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 1521429474}
     - target: {fileID: 1144284444609082326, guid: e736b466884b7854a9d1b513fbdef13b, type: 3}
       propertyPath: _stepSource.Array.data[1]
-      value:
+      value: 
       objectReference: {fileID: 1838407015}
     - target: {fileID: 1144284444609082326, guid: e736b466884b7854a9d1b513fbdef13b, type: 3}
       propertyPath: _stepSource.Array.data[2]
-      value:
+      value: 
       objectReference: {fileID: 634300198}
     - target: {fileID: 2519522978759236603, guid: e736b466884b7854a9d1b513fbdef13b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2533,7 +2518,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: f89745e6e92dd7743b13dec44b6c02dc, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.04
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2667,7 +2652,7 @@ Transform:
   m_LocalScale: {x: 20, y: 20, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1266850535}
+  m_Father: {fileID: 2041592546}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1566907844
 SpriteRenderer:
@@ -2843,7 +2828,7 @@ Transform:
   m_LocalScale: {x: 20, y: 20, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1266850535}
+  m_Father: {fileID: 2041592546}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1721338096
 SpriteRenderer:
@@ -3062,7 +3047,7 @@ Transform:
   m_LocalScale: {x: 20, y: 20, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1266850535}
+  m_Father: {fileID: 2041592546}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1758157793
 SpriteRenderer:
@@ -3411,8 +3396,8 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 0beef7db57b44e04d9cda242973a08e0, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_PlayOnAwake: 0
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -3544,7 +3529,7 @@ Transform:
   - {fileID: 1197548493}
   - {fileID: 832376655}
   - {fileID: 993219161}
-  m_Father: {fileID: 1266850535}
+  m_Father: {fileID: 2041592546}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1992054153
 PrefabInstance:
@@ -3781,7 +3766,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1266850535}
+  m_Father: {fileID: 2041592546}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &2107219758
 BoxCollider2D:
@@ -3860,7 +3845,7 @@ Transform:
   - {fileID: 1838407013}
   - {fileID: 634300196}
   - {fileID: 74401003}
-  m_Father: {fileID: 1266850535}
+  m_Father: {fileID: 2041592546}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1378132954103516570
 PrefabInstance:
@@ -3937,3 +3922,4 @@ SceneRoots:
   - {fileID: 1521429475}
   - {fileID: 1487423555}
   - {fileID: 1266850535}
+  - {fileID: 1406773284}
