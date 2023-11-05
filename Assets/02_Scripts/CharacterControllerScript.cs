@@ -110,15 +110,7 @@ public class CharacterControllerScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Interactable" && _tryInteract == true)
-        {
-            _currentInteractable = collision.gameObject;
-            _interactable = true;
-        }
-    }
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Interactable" && _tryInteract == true)
+        if (collision.gameObject.tag == "Interactable")
         {
             _currentInteractable = collision.gameObject;
             _interactable = true;
@@ -126,7 +118,7 @@ public class CharacterControllerScript : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Interactable" && _tryInteract == true)
+        if (collision.gameObject.tag == "Interactable")
         {
             _currentInteractable = null;
             _interactable = false;
