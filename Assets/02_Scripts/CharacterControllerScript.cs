@@ -1,5 +1,3 @@
-using System.Diagnostics.Tracing;
-using UnityEditor.XR;
 using UnityEngine;
 
 public class CharacterControllerScript : MonoBehaviour

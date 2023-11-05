@@ -7,7 +7,7 @@ public class InteractableSwitch : MonoBehaviour
 {
     Scene scene;
     [SerializeField] float cooldown = 0.5f;
-    GameObject toDisable,coconut, shovel, tunnel, dice=null;
+    GameObject toDisable,coconut, shovel, tunnel, dice, pivot=null;
     bool isReady = true;
     public void Trigger()
     {
@@ -30,7 +30,10 @@ public class InteractableSwitch : MonoBehaviour
             tunnel = GameObject.Find("BlockedTunnel");
         }
         if (scene.name == "CityScene")
+        {
             dice = GameObject.Find("Dice");
+            pivot = GameObject.Find("pivot");
+        }
     }
     private void Start()
     {
@@ -64,7 +67,11 @@ public class InteractableSwitch : MonoBehaviour
         }
         if (this.gameObject.name == "Dice")
         {
-            dice.GetComponent<Dice>().RollDice();            
+            dice.GetComponent<Dice>().RollDice();   
+        }
+        if (this.gameObject.name == "pivot")
+        {
+            pivot.GetComponent<BuildingCollapse>().HulkSmash();
         }
     }
 

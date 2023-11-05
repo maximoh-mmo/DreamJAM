@@ -1,18 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class buildingCollapse : MonoBehaviour
+public class BuildingCollapse : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    bool hulkMode = false;
+    public bool HulkMode { set {  hulkMode = value; } }
+    public void HulkSmash()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (hulkMode == true)
+        {
+            Debug.Log("may smash");
+        }
     }
 }

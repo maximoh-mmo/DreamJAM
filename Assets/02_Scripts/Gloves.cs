@@ -17,6 +17,7 @@ public class Gloves : MonoBehaviour
         {
             GameObject.Find("Character").GetComponent<SpriteRenderer>().material.color = new Color(.2f, 1f, .2f, 1f);
             GameObject.Find("Character").GetComponent<CharacterControllerScript>().JumpModifier = 6f;
+            GetComponent<BuildingCollapse>().HulkMode = true;
         }
     }
 }
