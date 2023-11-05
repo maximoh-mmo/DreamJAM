@@ -468,6 +468,7 @@ MonoBehaviour:
   _jumpSource: {fileID: 4088584852711129938}
   _stepSource:
   - {fileID: 7212776606467676347}
+  _soundName: []
 --- !u!1 &5605962939425472976
 GameObject:
   m_ObjectHideFlags: 0

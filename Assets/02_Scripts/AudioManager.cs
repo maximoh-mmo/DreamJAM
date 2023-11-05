@@ -10,9 +10,12 @@ public class AudioManager : MonoBehaviour
     private bool _titleMusicPlaying = false;
     private bool _levelMusicPlaying = false;
 
-    [Header("Sounds")]
+    [Header("Character Sounds")]
     [SerializeField] private AudioSource _jumpSource;
     [SerializeField] private AudioSource[] _stepSource;
+
+    [Header("Level Specific Sounds")]
+    [SerializeField] private AudioSource[] _soundName;
 
 
     public void StartTitleMusic()
