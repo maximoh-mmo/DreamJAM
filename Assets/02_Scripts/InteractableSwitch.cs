@@ -34,7 +34,10 @@ public class InteractableSwitch : MonoBehaviour
     }
     private void Start()
     {
-        toDisable.SetActive(false);
+        if (scene.name == "Beach Level")
+        {
+            toDisable.SetActive(false);
+        }
     }
     public void doAthingDependingOnMyName()
     {
