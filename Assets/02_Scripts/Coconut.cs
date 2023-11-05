@@ -5,20 +5,18 @@ using UnityEngine;
 public class Coconut : MonoBehaviour
 {
     bool inTree = true;
-    private void Update()
-    {
-        if (inTree == false)
-        {
-            Debug.Log("falling");
-            if (GetComponent<Animator>().enabled == true && GetComponent<Animation>().isPlaying == false) {
+    [SerializeField]Sprite sprite = null;
 
-                Debug.Log("squash");
-            }
-        }
-    }
     public void Fall()
-    {            
+    {
         this.GetComponent<Animator>().enabled = true;
         inTree = false;
+        StartCoroutine(CrabSwap());
+    }
+    IEnumerator CrabSwap()
+    {
+        yield return new WaitForSeconds(0.5f);
+        GameObject.Find("Crab").GetComponent<SpriteRenderer>().sprite = sprite;
+        Destroy(gameObject);
     }
 }
