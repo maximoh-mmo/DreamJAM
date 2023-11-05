@@ -3428,6 +3428,7 @@ GameObject:
   - component: {fileID: 1838407015}
   - component: {fileID: 1838407016}
   - component: {fileID: 1838407018}
+  - component: {fileID: 1838407020}
   - component: {fileID: 1838407019}
   m_Layer: 3
   m_Name: Coconut
@@ -3678,6 +3679,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1838407020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1838407012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24785bff7819a6e468e1fc4ac546b0c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1878073330 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1696103864153829196, guid: 530c4cefb0d788f4ebcc7d01e64a8ea7, type: 3}

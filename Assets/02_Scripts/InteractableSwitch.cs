@@ -28,15 +28,7 @@ public class InteractableSwitch : MonoBehaviour
         {
             toDisable = GameObject.Find("DisableDuringDay");
             coconut = GameObject.Find("Coconut");
-        }
-
-        toDisable.SetActive(false);
-   
-    }
-    private void Update()
-    {
-        if (transform.position == new Vector3(8.94f, 1.72f, -0.03f)) {
-            Debug.Log("SquashCrab");
+            toDisable.SetActive(false);
         }
     }
     public void doAthingDependingOnMyName()
@@ -55,7 +47,7 @@ public class InteractableSwitch : MonoBehaviour
         }
         else if (this.gameObject.name == "Coconut")
         {
-            coconut.GetComponent<Animator>().enabled = true;
+            coconut.GetComponent<Coconut>().Fall();
         }
     }
 

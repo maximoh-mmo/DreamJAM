@@ -4,8 +4,21 @@ using UnityEngine;
 
 public class Coconut : MonoBehaviour
 {
-    private void OnTriggerEnter2D(Collider2D collision)
+    bool inTree = true;
+    private void Update()
     {
-        Debug.Log(collision.gameObject.name);
+        if (inTree == false)
+        {
+            Debug.Log("falling");
+            if (GetComponent<Animator>().enabled == true && GetComponent<Animation>().isPlaying == false) {
+
+                Debug.Log("squash");
+            }
+        }
+    }
+    public void Fall()
+    {            
+        this.GetComponent<Animator>().enabled = true;
+        inTree = false;
     }
 }

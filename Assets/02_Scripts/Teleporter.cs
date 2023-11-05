@@ -18,6 +18,7 @@ public class Teleporter : MonoBehaviour
                 doCooldown();
                 _PortalExit.GetComponent<Teleporter>().IsReady = false;
                 _PortalExit.GetComponent<Teleporter>().doCooldown();
+                GetComponent<AudioSource>().PlayOneShot(GetComponent<AudioSource>().clip));
                 coll.transform.position = new Vector3(_PortalExit.transform.position.x, _PortalExit.transform.position.y, 0);
             }
         }
