@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class CharacterControllerScript : MonoBehaviour
 {
-    float _jumpModifier = 12f;
-    float _speedMultiplier = 4f;
-    float _horizontal = 0f;
-    [SerializeField]bool _tryInteract, _jumpRequested, _isGrounded, _isJumping, _interactable = false;
-    int _gravity = 1;
+    [SerializeField] float _jumpModifier = 12f;
+    [SerializeField] float _speedMultiplier = 4f;
+    [SerializeField] float _horizontal = 0f;
+    [SerializeField] bool _tryInteract, _jumpRequested, _isGrounded, _isJumping, _interactable = false;
+    [SerializeField] int _gravity = 1;
     Rigidbody2D rb;
     CapsuleCollider2D coll;
     [SerializeField]LayerMask _ground;
-    float _gravityScale = 1f;
-    float _fallingGravityScale = 3f;
+    [SerializeField] float _gravityScale = 1f;
+    [SerializeField] float _fallingGravityScale = 3f;
     SpriteRenderer sr;
     PhysicsMaterial2D pm;
     Animator _animator;
