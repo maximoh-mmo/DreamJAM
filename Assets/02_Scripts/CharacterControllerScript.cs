@@ -19,6 +19,7 @@ public class CharacterControllerScript : MonoBehaviour
     Animator _animator;
     [SerializeField] GameObject _currentInteractable = null;
     public bool Interact {  get { return _interact; } }
+    public float JumpModifier { set { _jumpModifier = value; } }
     // Start is called before the first frame update
     void Start()
     {
