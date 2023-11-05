@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/01_Scenes/Nightmare_Level.unity
     guid: 2fc26381d12c0a4498dffbc53045867a
+  - enabled: 1
+    path: Assets/01_Scenes/06_Credits_Scene.unity
+    guid: 8ae3d63661f760b42a2384f10423690f
   m_configObjects: {}
