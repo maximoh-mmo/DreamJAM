@@ -23,10 +23,6 @@ public class Teleporter : MonoBehaviour
             }
         }
     }
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        
-    }
     public void doCooldown()
     {
         StartCoroutine(Cooldown());
