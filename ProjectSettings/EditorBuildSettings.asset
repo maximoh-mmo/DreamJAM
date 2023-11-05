@@ -5,7 +5,19 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/01_Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/01_Scenes/TitleScreen.unity
+    guid: 65028b948796b394cadd0fff96b71c9c
+  - enabled: 1
+    path: Assets/01_Scenes/Level 1_Sea of Clouds.unity
+    guid: 4391fa21563d44c4485bfee88dc7fddb
+  - enabled: 1
+    path: Assets/01_Scenes/CityScene.unity
+    guid: f73ff8b0b74d16b4099266cb37dd15e0
+  - enabled: 1
+    path: Assets/01_Scenes/Nightmare_Level.unity
+    guid: 2fc26381d12c0a4498dffbc53045867a
   m_configObjects: {}
