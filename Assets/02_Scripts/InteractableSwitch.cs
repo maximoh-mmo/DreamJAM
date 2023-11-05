@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
 using UnityEditor.Experimental.GraphView;
+using System.Security.Cryptography;
 
 public class InteractableSwitch : MonoBehaviour
 {
@@ -32,9 +33,8 @@ public class InteractableSwitch : MonoBehaviour
     }
     private void Update()
     {
-        if (coconutActive == true)
-        {
-
+        if (transform.position == new Vector3(8.94f, 1.72f, -0.03f)) {
+            Debug.Log("SquashCrab");
         }
     }
     public void doAthingDependingOnMyName()
@@ -53,7 +53,7 @@ public class InteractableSwitch : MonoBehaviour
         }
         else if (this.gameObject.name == "Coconut")
         {
-            coconut.GetComponent<Animator>().SetTrigger("fall");
+            coconut.GetComponent<Animator>().enabled = true;
         }
     }
 
