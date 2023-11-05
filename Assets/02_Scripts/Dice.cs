@@ -35,12 +35,12 @@ public class Dice : MonoBehaviour
             GameObject.Find("Group1").GetComponent<PolygonCollider2D>().enabled = true;
             GameObject.Find("Character").GetComponent<CharacterControllerScript>().JumpModifier = 10f;
 
-            GameObject.Find("Character").GetComponent<SpriteRenderer>().material.color = new Color(1f, 1f, 1f, 1f);
+            GameObject.Find("Character").GetComponent<SpriteRenderer>().material.color = new Color(GameObject.Find("Character").GetComponent<SpriteRenderer>().material.color.r, GameObject.Find("Character").GetComponent<SpriteRenderer>().material.color.g, GameObject.Find("Character").GetComponent<SpriteRenderer>().material.color.b, 1f);
             //20 high jump
         }
         if (spr == 1) {
             GameObject.Find("Character").GetComponent<CharacterControllerScript>().JumpModifier = 6f;
-            GameObject.Find("Character").GetComponent<SpriteRenderer>().material.color = new Color(1f, 1f, 1f, 0.2f);
+            GameObject.Find("Character").GetComponent<SpriteRenderer>().material.color = new Color(GameObject.Find("Character").GetComponent<SpriteRenderer>().material.color.r, GameObject.Find("Character").GetComponent<SpriteRenderer>().material.color.g, GameObject.Find("Character").GetComponent<SpriteRenderer>().material.color.b, 0.4f);
             GameObject.Find("Group1").GetComponent<PolygonCollider2D>().enabled = false;
             //ghost
         }
