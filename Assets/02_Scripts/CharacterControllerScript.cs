@@ -7,7 +7,7 @@ public class CharacterControllerScript : MonoBehaviour
     [SerializeField] float _jumpModifier = 12f;
     [SerializeField] float _speedMultiplier = 4f;
     [SerializeField] float _horizontal = 0f;
-    [SerializeField] bool _tryInteract, _jumpRequested, _isGrounded, _isJumping, _interactable = false;
+    [SerializeField] bool _tryInteract, _jumpRequested, _isGrounded, _isJumping, _interactable, _interact = false;
     [SerializeField] int _gravity = 1;
     Rigidbody2D rb;
     CapsuleCollider2D coll;
@@ -17,6 +17,8 @@ public class CharacterControllerScript : MonoBehaviour
     SpriteRenderer sr;
     PhysicsMaterial2D pm;
     Animator _animator;
+    [SerializeField] GameObject _currentInteractable = null;
+    public bool Interact {  get { return _interact; } }
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +27,7 @@ public class CharacterControllerScript : MonoBehaviour
         coll = GetComponent <CapsuleCollider2D> ();
         rb = GetComponent<Rigidbody2D>();
         pm = rb.sharedMaterial;
+       
     }
 
     // Update is called once per frame
@@ -108,6 +111,7 @@ public class CharacterControllerScript : MonoBehaviour
     {
         if (collision.gameObject.tag == "Interactable" && _tryInteract == true)
         {
+            _currentInteractable = collision.gameObject;
             _interactable = true;
         }
     }
@@ -115,6 +119,7 @@ public class CharacterControllerScript : MonoBehaviour
     {
         if (collision.gameObject.tag == "Interactable" && _tryInteract == true)
         {
+            _currentInteractable = collision.gameObject;
             _interactable = true;
         }
     }
@@ -122,12 +127,16 @@ public class CharacterControllerScript : MonoBehaviour
     {
         if (collision.gameObject.tag == "Interactable" && _tryInteract == true)
         {
+            _currentInteractable = null;
             _interactable = false;
         }
     }
 
     void TryInteract()
     {
-        Debug.Log("Trying to do a thing");
+        if (_currentInteractable != null)
+        {
+            _currentInteractable.GetComponent<InteractableSwitch>().Trigger();
+        }
     }
 }
