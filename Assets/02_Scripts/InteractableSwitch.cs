@@ -65,11 +65,11 @@ public class InteractableSwitch : MonoBehaviour
 
             Destroy(tunnel);
         }
-        if (this.gameObject.name == "Dice")
+        else if (this.gameObject.name == "Dice")
         {
             dice.GetComponent<Dice>().RollDice();   
         }
-        if (this.gameObject.name == "pivot")
+        else if (this.gameObject.name == "pivot")
         {
             pivot.GetComponent<BuildingCollapse>().HulkSmash();
         }
