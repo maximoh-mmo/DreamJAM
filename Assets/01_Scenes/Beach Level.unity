@@ -224,8 +224,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8ed8ff28080d092438cdbd143eb77561, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   cooldown: 1
 --- !u!61 &74401006
 BoxCollider2D:
@@ -625,10 +625,11 @@ GameObject:
   - component: {fileID: 634300196}
   - component: {fileID: 634300197}
   - component: {fileID: 634300198}
+  - component: {fileID: 634300200}
   - component: {fileID: 634300199}
   m_Layer: 0
   m_Name: Shovel
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -842,6 +843,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.2010302, y: 0.24818498}
   m_EdgeRadius: 0
+--- !u!114 &634300200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 634300195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ed8ff28080d092438cdbd143eb77561, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  cooldown: 0.5
 --- !u!1 &658830634
 GameObject:
   m_ObjectHideFlags: 0
@@ -1024,7 +1038,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7934381162245389500, guid: b8072ab388d6b704cb4cd3a19f15efb2, type: 3}
       propertyPath: _character
-      value: 
+      value:
       objectReference: {fileID: 1103202421}
     - target: {fileID: 8129390807710069178, guid: b8072ab388d6b704cb4cd3a19f15efb2, type: 3}
       propertyPath: m_Name
@@ -2492,7 +2506,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1144284444609082326, guid: e736b466884b7854a9d1b513fbdef13b, type: 3}
       propertyPath: _levelMusic
-      value: 
+      value:
       objectReference: {fileID: 658830635}
     - target: {fileID: 1144284444609082326, guid: e736b466884b7854a9d1b513fbdef13b, type: 3}
       propertyPath: _stepSource.Array.size
@@ -2500,15 +2514,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1144284444609082326, guid: e736b466884b7854a9d1b513fbdef13b, type: 3}
       propertyPath: _stepSource.Array.data[0]
-      value: 
+      value:
       objectReference: {fileID: 1521429474}
     - target: {fileID: 1144284444609082326, guid: e736b466884b7854a9d1b513fbdef13b, type: 3}
       propertyPath: _stepSource.Array.data[1]
-      value: 
+      value:
       objectReference: {fileID: 1838407015}
     - target: {fileID: 1144284444609082326, guid: e736b466884b7854a9d1b513fbdef13b, type: 3}
       propertyPath: _stepSource.Array.data[2]
-      value: 
+      value:
       objectReference: {fileID: 634300198}
     - target: {fileID: 2519522978759236603, guid: e736b466884b7854a9d1b513fbdef13b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3315,7 +3329,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4039223028802648332, guid: 3d68e10c1fa8cd54ba363d26e8afe6b7, type: 3}
       propertyPath: m_Material
-      value: 
+      value:
       objectReference: {fileID: 6200000, guid: dee26c45de9c2a6479a87ffc3776cbf0, type: 2}
     - target: {fileID: 5359753198394949612, guid: 3d68e10c1fa8cd54ba363d26e8afe6b7, type: 3}
       propertyPath: m_Name
@@ -3615,8 +3629,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8ed8ff28080d092438cdbd143eb77561, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   cooldown: 0.5
 --- !u!95 &1838407019
 Animator:
@@ -3634,7 +3648,7 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
-  m_WarningMessage: 
+  m_WarningMessage:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
@@ -3649,8 +3663,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 24785bff7819a6e468e1fc4ac546b0c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   sprite: {fileID: 21300000, guid: 5c6816959d6789145b4614cc6d1e0121, type: 3}
 --- !u!82 &1838407021
 AudioSource:
