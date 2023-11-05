@@ -1,11 +1,13 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using JetBrains.Annotations;
+
 public class InteractableSwitch : MonoBehaviour
 {
     Scene scene;
     [SerializeField] float cooldown = 0.5f;
-    GameObject toDisable,coconut=null;
+    GameObject toDisable,coconut, shovel, tunnel=null;
     bool isReady = true;
     public void Trigger()
     {
@@ -24,8 +26,13 @@ public class InteractableSwitch : MonoBehaviour
         {
             toDisable = GameObject.Find("DisableDuringDay");
             coconut = GameObject.Find("Coconut");
-            if (toDisable!=null)toDisable.SetActive(false);
+            shovel = GameObject.Find("Shovel");
+            tunnel = GameObject.Find("BlockedTunnel");
         }
+    }
+    private void Start()
+    {
+        toDisable.SetActive(false);
     }
     public void doAthingDependingOnMyName()
     {
@@ -44,6 +51,11 @@ public class InteractableSwitch : MonoBehaviour
         else if (this.gameObject.name == "Coconut")
         {
             coconut.GetComponent<Coconut>().Fall();
+        }
+        else if (this.gameObject.name == "Shovel")
+        {
+
+            Destroy(tunnel);
         }
     }
 

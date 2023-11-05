@@ -1,16 +1,13 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Coconut : MonoBehaviour
 {
-    bool inTree = true;
     [SerializeField]Sprite sprite = null;
 
     public void Fall()
     {
         this.GetComponent<Animator>().enabled = true;
-        inTree = false;
         StartCoroutine(CrabSwap());
     }
     IEnumerator CrabSwap()
