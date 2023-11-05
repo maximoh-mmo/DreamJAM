@@ -1,9 +1,11 @@
-using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class InteractableSwitch : MonoBehaviour
 {
-    [SerializeField] float cooldown = 1f;
+    Scene scene;
+    [SerializeField] float cooldown = 0.5f;
     GameObject toDisable=null;
     bool isReady = true;
     public void Trigger()
@@ -14,11 +16,21 @@ public class InteractableSwitch : MonoBehaviour
         }
     }
 
+    private void Awake()
+    {
+        scene = SceneManager.GetActiveScene();
+
+        // Check if the name of the current Active Scene is your first Scene.
+        if (scene.name == "Beach Level")
+        {
+            toDisable = GameObject.Find("DisableDuringDay");
+        }
+   
+    }
     public void doAthingDependingOnMyName()
     {
         Debug.Log("My name is> "+this.gameObject.name);
         if (this.gameObject.name == "LightSwitch") {
-            if (toDisable == null) { toDisable = GameObject.Find("DisableDuringDay"); }
             if (toDisable.activeSelf == true)
             {
                 toDisable.SetActive(false);
