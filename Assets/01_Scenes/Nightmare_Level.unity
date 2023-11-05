@@ -523,7 +523,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 317df43cace077248bb858744916cb75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextScene: Beach Level
+  nextScene: 06_Credits_Scene
 --- !u!114 &187643566
 MonoBehaviour:
   m_ObjectHideFlags: 0
