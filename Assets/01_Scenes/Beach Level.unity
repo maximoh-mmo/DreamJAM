@@ -914,7 +914,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7934381162245389500, guid: b8072ab388d6b704cb4cd3a19f15efb2, type: 3}
       propertyPath: _character
-      value: 
+      value:
       objectReference: {fileID: 1103202421}
     - target: {fileID: 8129390807710069178, guid: b8072ab388d6b704cb4cd3a19f15efb2, type: 3}
       propertyPath: m_Name
@@ -2120,7 +2120,7 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.04, y: -0.04}
+    - - {x: -0.02887615, y: 0.063822806}
       - {x: 0.02, y: 0.14}
       - {x: 0.06, y: 0.21}
       - {x: 0.14, y: 0.17999999}
@@ -2148,6 +2148,7 @@ PolygonCollider2D:
       - {x: -0.44, y: 0.26}
       - {x: -0.45, y: 0.19999999}
       - {x: -0.45, y: 0.16}
+      - {x: -0.4250411, y: 0.17871918}
       - {x: -0.41, y: 0.19}
       - {x: -0.29, y: 0.34}
       - {x: -0.28, y: 0.26999998}
@@ -2157,15 +2158,15 @@ PolygonCollider2D:
       - {x: -0.14, y: 0.26}
       - {x: -0.11, y: 0.26999998}
       - {x: -0.12, y: 0.17}
-      - {x: -0.17, y: 0.03}
-      - {x: -0.21, y: -0.14999999}
-      - {x: -0.26999998, y: -0.5}
-      - {x: -0.28, y: -0.59}
-      - {x: -0.32, y: -0.64}
-      - {x: -0.099999994, y: -0.64}
-      - {x: -0.099999994, y: -0.39}
-      - {x: -0.089999996, y: -0.38}
-      - {x: -0.07, y: -0.17}
+      - {x: -0.17, y: 0.21168987}
+      - {x: -0.16921246, y: 0.16888432}
+      - {x: -0.18100901, y: 0.14889252}
+      - {x: -0.24292046, y: 0.15159146}
+      - {x: -0.16797374, y: 0.13496307}
+      - {x: -0.07404432, y: 0.09046752}
+      - {x: -0.08516817, y: 0.12540609}
+      - {x: -0.023256741, y: 0.1761936}
+      - {x: -0.066292055, y: 0.08955701}
   m_UseDelaunayMesh: 0
 --- !u!1001 &1364139121
 PrefabInstance:
@@ -2422,7 +2423,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1144284444609082326, guid: e736b466884b7854a9d1b513fbdef13b, type: 3}
       propertyPath: _levelMusic
-      value: 
+      value:
       objectReference: {fileID: 658830635}
     - target: {fileID: 1144284444609082326, guid: e736b466884b7854a9d1b513fbdef13b, type: 3}
       propertyPath: _stepSource.Array.size
@@ -2430,15 +2431,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1144284444609082326, guid: e736b466884b7854a9d1b513fbdef13b, type: 3}
       propertyPath: _stepSource.Array.data[0]
-      value: 
+      value:
       objectReference: {fileID: 1521429474}
     - target: {fileID: 1144284444609082326, guid: e736b466884b7854a9d1b513fbdef13b, type: 3}
       propertyPath: _stepSource.Array.data[1]
-      value: 
+      value:
       objectReference: {fileID: 1838407015}
     - target: {fileID: 1144284444609082326, guid: e736b466884b7854a9d1b513fbdef13b, type: 3}
       propertyPath: _stepSource.Array.data[2]
-      value: 
+      value:
       objectReference: {fileID: 634300198}
     - target: {fileID: 2519522978759236603, guid: e736b466884b7854a9d1b513fbdef13b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3243,6 +3244,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4039223028802648332, guid: 3d68e10c1fa8cd54ba363d26e8afe6b7, type: 3}
+      propertyPath: m_Material
+      value:
+      objectReference: {fileID: 6200000, guid: dee26c45de9c2a6479a87ffc3776cbf0, type: 2}
     - target: {fileID: 5359753198394949612, guid: 3d68e10c1fa8cd54ba363d26e8afe6b7, type: 3}
       propertyPath: m_Name
       value: Character
@@ -3623,7 +3628,7 @@ Transform:
   m_GameObject: {fileID: 2025513289}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 96.98, y: 2.11, z: 0}
+  m_LocalPosition: {x: 96.98, y: -0.56, z: 0}
   m_LocalScale: {x: 10, y: 10, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3716,7 +3721,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 9e05e33edf7aa2648a9c31647a43f0fa, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.92954487, b: 0.7971698, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
