@@ -7,7 +7,7 @@ public class CharacterControllerScript : MonoBehaviour
     float _jumpModifier = 12f;
     float _speedMultiplier = 4f;
     float _horizontal = 0f;
-    bool _tryInteract, _jumpRequested, _isJumping, _interactable = false;
+    [SerializeField]bool _tryInteract, _jumpRequested, _isGrounded, _isJumping, _interactable = false;
     int _gravity = 1;
     Rigidbody2D rb;
     CapsuleCollider2D coll;
@@ -16,10 +16,11 @@ public class CharacterControllerScript : MonoBehaviour
     float _fallingGravityScale = 3f;
     SpriteRenderer sr;
     PhysicsMaterial2D pm;
+    Animator _animator;
     // Start is called before the first frame update
     void Start()
     {
-       
+        _animator = GetComponent<Animator>();
         sr = GetComponentInChildren<SpriteRenderer>();
         coll = GetComponent <CapsuleCollider2D> ();
         rb = GetComponent<Rigidbody2D>();
@@ -29,18 +30,29 @@ public class CharacterControllerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (_gravity != 0) { ApplyGravity(); }
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded()) { _jumpRequested = true; }
+        _isGrounded = isGrounded();
         _horizontal = Input.GetAxis("Horizontal");
+        
+        if (_isGrounded==true )
+        {
+            rb.sharedMaterial = null;
+            _animator.SetBool("isJumping", false);
+        }
+        if (_jumpRequested==true && _isGrounded == true) { DoJump(); }
+        if (_gravity != 0) { ApplyGravity(); }
+        if (Input.GetKeyDown(KeyCode.Space) && _isGrounded == true) { _jumpRequested = true; }
         if (_horizontal != 0) { MoveCharacter(); }
         if (_horizontal == 0) { StopCharacter(); }
-        if (_jumpRequested && isGrounded()) { DoJump(); }
         if (Input.GetKeyDown(KeyCode.E)) { _tryInteract = true; }
         if (Input.GetKeyUp(KeyCode.E)) { _tryInteract = false; }
-        if (_interactable && _tryInteract) { TryInteract(); }
+        if (_interactable==true && _tryInteract == true) { TryInteract(); }
     }
     void DoJump()
     {
+        _animator.SetBool("isWalking", false);
+        _animator.SetBool("isJumping", true);
+        rb.sharedMaterial = pm;
+
         if (_gravity!=0)
         {
             rb.AddForce(Vector2.up * _gravity * _jumpModifier, ForceMode2D.Impulse);
@@ -49,12 +61,13 @@ public class CharacterControllerScript : MonoBehaviour
         {
             rb.AddForce(Vector2.up * _jumpModifier, ForceMode2D.Impulse);
         }
-        rb.sharedMaterial = pm;
         _isJumping = true;
         _jumpRequested = false;
     }
     void MoveCharacter()
-    {   
+    {
+        if (_isGrounded == true) { _animator.SetBool("isWalking", true); _animator.SetBool("isJumping", false); }
+        else { _animator.SetBool("isWalking", false); }
         if (_horizontal > 0)
         {
             sr.flipX = true;
@@ -67,15 +80,16 @@ public class CharacterControllerScript : MonoBehaviour
     }
     void StopCharacter()
     {
+        _animator.SetBool("isWalking", false);
         rb.velocity = new Vector2(0f, rb.velocity.y);
     }
     void ApplyGravity()
     {
-        if (rb.velocity.y >= 0 && _isJumping)
+        if (rb.velocity.y >= 0 && _isJumping == true)
         {
             rb.gravityScale = _gravityScale * _gravity;
         }
-        else if (rb.velocity.y < 0 && _isJumping)
+        else if (rb.velocity.y < 0 && _isJumping == true)
         {
             rb.gravityScale = _fallingGravityScale * _gravity;
         }
@@ -84,7 +98,6 @@ public class CharacterControllerScript : MonoBehaviour
     {
         if (Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, _ground))
         {
-            rb.sharedMaterial = null;
             _isJumping = false;
             return true;
         }
@@ -93,21 +106,21 @@ public class CharacterControllerScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Interactable" && _tryInteract)
+        if (collision.gameObject.tag == "Interactable" && _tryInteract == true)
         {
             _interactable = true;
         }
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Interactable" && _tryInteract)
+        if (collision.gameObject.tag == "Interactable" && _tryInteract == true)
         {
             _interactable = true;
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Interactable" && _tryInteract)
+        if (collision.gameObject.tag == "Interactable" && _tryInteract == true)
         {
             _interactable = false;
         }

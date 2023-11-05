@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4039223028802648332}
   - component: {fileID: 1933415511252245872}
   - component: {fileID: 4159827554251183708}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Character
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -48,6 +48,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86d286236f1e3b04990798a148dd985d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _tryInteract: 0
+  _jumpRequested: 0
+  _isGrounded: 0
+  _isJumping: 0
+  _interactable: 0
   _ground:
     serializedVersion: 2
     m_Bits: 8
