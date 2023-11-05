@@ -1,16 +1,12 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
-using UnityEditor.Experimental.GraphView;
-using System.Security.Cryptography;
-
 public class InteractableSwitch : MonoBehaviour
 {
     Scene scene;
     [SerializeField] float cooldown = 0.5f;
     GameObject toDisable,coconut=null;
     bool isReady = true;
-    bool coconutActive=false;
     public void Trigger()
     {
         if (isReady == true)
@@ -28,7 +24,7 @@ public class InteractableSwitch : MonoBehaviour
         {
             toDisable = GameObject.Find("DisableDuringDay");
             coconut = GameObject.Find("Coconut");
-            toDisable.SetActive(false);
+            if (toDisable!=null)toDisable.SetActive(false);
         }
     }
     public void doAthingDependingOnMyName()

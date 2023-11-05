@@ -16,6 +16,7 @@ public class Coconut : MonoBehaviour
     IEnumerator CrabSwap()
     {
         yield return new WaitForSeconds(0.5f);
+        GetComponent<AudioSource>().PlayOneShot(GetComponent<AudioSource>().clip);
         GameObject.Find("Crab").GetComponent<SpriteRenderer>().sprite = sprite;
         GameObject.Find("Crab").GetComponent<BoxCollider2D>().enabled = false;
         Destroy(gameObject);
