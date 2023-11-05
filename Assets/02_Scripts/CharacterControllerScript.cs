@@ -39,6 +39,7 @@ public class CharacterControllerScript : MonoBehaviour
         if (_isGrounded==true )
         {
             rb.sharedMaterial = null;
+            coll.sharedMaterial = null;
             _animator.SetBool("isJumping", false);
         }
         if (_jumpRequested==true && _isGrounded == true) { DoJump(); }
@@ -55,7 +56,7 @@ public class CharacterControllerScript : MonoBehaviour
         _animator.SetBool("isWalking", false);
         _animator.SetBool("isJumping", true);
         rb.sharedMaterial = pm;
-
+        coll.sharedMaterial= pm;
         if (_gravity!=0)
         {
             rb.AddForce(Vector2.up * _gravity * _jumpModifier, ForceMode2D.Impulse);
