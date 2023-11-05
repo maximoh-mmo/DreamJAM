@@ -2,7 +2,7 @@ using System.Diagnostics.Tracing;
 using UnityEditor.XR;
 using UnityEngine;
 
-public class CharacterController : MonoBehaviour
+public class CharacterControllerScript : MonoBehaviour
 {
     float _jumpModifier = 12f;
     float _speedMultiplier = 4f;
