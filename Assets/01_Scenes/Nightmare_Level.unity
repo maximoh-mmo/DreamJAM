@@ -390,6 +390,8 @@ GameObject:
   - component: {fileID: 187643563}
   - component: {fileID: 187643562}
   - component: {fileID: 187643564}
+  - component: {fileID: 187643566}
+  - component: {fileID: 187643565}
   m_Layer: 0
   m_Name: End
   m_TagString: Untagged
@@ -509,6 +511,34 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.64, y: 0.64}
   m_EdgeRadius: 0
+--- !u!114 &187643565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 187643561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 317df43cace077248bb858744916cb75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextScene: Beach Level
+--- !u!114 &187643566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 187643561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e741851cba3ad425c91ecf922cc6b379, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _data:
+    _json: '{"declarations":{"Kind":"Object","collection":{"$content":[],"$version":"A"},"$version":"A"}}'
+    _objectReferences: []
 --- !u!1 &196656383
 GameObject:
   m_ObjectHideFlags: 0
