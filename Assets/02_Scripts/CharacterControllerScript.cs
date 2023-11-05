@@ -10,7 +10,7 @@ public class CharacterController : MonoBehaviour
     bool _tryInteract, _jumpRequested, _isJumping, _interactable = false;
     int _gravity = 1;
     Rigidbody2D rb;
-    BoxCollider2D coll;
+    CapsuleCollider2D coll;
     [SerializeField]LayerMask _ground;
     float _gravityScale = 1f;
     float _fallingGravityScale = 3f;
@@ -21,7 +21,7 @@ public class CharacterController : MonoBehaviour
     {
        
         sr = GetComponentInChildren<SpriteRenderer>();
-        coll = GetComponent<BoxCollider2D>();
+        coll = GetComponent <CapsuleCollider2D> ();
         rb = GetComponent<Rigidbody2D>();
         pm = rb.sharedMaterial;
     }

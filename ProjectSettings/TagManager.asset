@@ -45,3 +45,6 @@ TagManager:
   - name: Solids
     uniqueID: 427071227
     locked: 0
+  - name: Clouds
+    uniqueID: 919234839
+    locked: 0
