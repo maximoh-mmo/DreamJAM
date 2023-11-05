@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1696103864153829196}
   - component: {fileID: 8211202818950153277}
-  - component: {fileID: 6615333843654935342}
+  - component: {fileID: 8242652542011548226}
   m_Layer: 3
   m_Name: Cloud
   m_TagString: Untagged
@@ -85,8 +85,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &6615333843654935342
-BoxCollider2D:
+--- !u!60 &8242652542011548226
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -117,7 +117,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.02335611, y: -0.013346318}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -127,6 +127,22 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.36640054, y: 0.10614722}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.08035366, y: 0.06298652}
+      - {x: 0.04057495, y: 0.051305044}
+      - {x: 0.01292038, y: 0.073716655}
+      - {x: -0.02415926, y: 0.0759069}
+      - {x: -0.043794937, y: 0.05307087}
+      - {x: -0.08539812, y: 0.058384664}
+      - {x: -0.15568562, y: 0.0759069}
+      - {x: -0.19809718, y: 0.04853981}
+      - {x: -0.19517681, y: 0.0007300949}
+      - {x: -0.15006618, y: -0.03393793}
+      - {x: -0.09597307, y: -0.025685616}
+      - {x: -0.062190283, y: -0.05225645}
+      - {x: -0.01, y: -0.04933607}
+      - {x: 0.024866523, y: -0.01911476}
+      - {x: 0.146637, y: -0.012699031}
+      - {x: 0.13057494, y: 0.05876114}
+  m_UseDelaunayMesh: 0
