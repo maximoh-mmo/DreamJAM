@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class ButterflyWings : MonoBehaviour
@@ -16,7 +17,7 @@ public class ButterflyWings : MonoBehaviour
         transform.SetParent(GameObject.Find("WingConnection").transform);
         transform.position = transform.parent.position;
         transform.rotation = transform.parent.rotation;
-        GetComponent<Animator>().enabled = true;
+        //GetComponent<Animator>().enabled = true;
 
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -26,7 +27,14 @@ public class ButterflyWings : MonoBehaviour
             GameObject.Find("Bully1").GetComponent<Animator>().enabled = true;
             GameObject.Find("Bully2").GetComponent<Animator>().enabled = true;
             GameObject.Find("Bully3").GetComponent<Animator>().enabled = true;
-            Destroy(this.gameObject);
+            Destroy(GameObject.Find("Speech_Bubble_4"));
+            StartCoroutine(waitToDestroy());
         }
+    }
+    private IEnumerator waitToDestroy()
+    {
+        yield return new WaitForSeconds(.25f);
+        Destroy(GameObject.Find("Bullies"));
+        Destroy(this.gameObject);
     }
 }
