@@ -3,14 +3,24 @@ using UnityEngine;
 public class BuildingCollapse : MonoBehaviour
 {
     bool hulkMode = false;
-    bool doRotate = false;
+    [SerializeField] bool doRotate = false;
+    [SerializeField] float fallspeed = 70;
     public bool HulkMode { set {  hulkMode = value; } }
 
     private void Update()
     {
-        if (doRotate == true && transform.rotation.z >= -65)
+        Debug.Log(transform.eulerAngles.z);
+
+        if (doRotate == true)
         {
-                this.transform.Rotate(Vector3.back, 40 * Time.deltaTime);
+                transform.Rotate(Vector3.back, fallspeed * Time.deltaTime);
+        }
+        if (transform.eulerAngles.z != 0)
+        {
+            if (transform.eulerAngles.z < 295)
+            {
+                doRotate = false;
+            }
         }
     }
 

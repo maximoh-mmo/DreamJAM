@@ -720,6 +720,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 257743ada08f4ac49b6c945c0e2a13f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  doRotate: 0
+  fallspeed: 100
 --- !u!61 &935274332
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2447,7 +2449,8 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1298640473291824669, guid: ed5814e5c0556d141a8aa24d329ff549, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
