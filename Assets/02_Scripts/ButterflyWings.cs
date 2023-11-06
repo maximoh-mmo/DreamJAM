@@ -13,5 +13,20 @@ public class ButterflyWings : MonoBehaviour
         Debug.Log("triggered wings");
         GameObject.Find("Character").transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
         GameObject.Find("Character").GetComponent<SpriteRenderer>().material.color = new Color(1f, 1f, 1f, 1f);
+        transform.SetParent(GameObject.Find("WingConnection").transform);
+        transform.position = transform.parent.position;
+        transform.rotation = transform.parent.rotation;
+        GetComponent<Animator>().enabled = true;
+
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.name == "Bullies")
+        {
+            GameObject.Find("Bully1").GetComponent<Animator>().enabled = true;
+            GameObject.Find("Bully2").GetComponent<Animator>().enabled = true;
+            GameObject.Find("Bully3").GetComponent<Animator>().enabled = true;
+            Destroy(this.gameObject);
+        }
     }
 }
