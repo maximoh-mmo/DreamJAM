@@ -9,8 +9,6 @@ public class BuildingCollapse : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(transform.eulerAngles.z);
-
         if (doRotate == true)
         {
                 transform.Rotate(Vector3.back, fallspeed * Time.deltaTime);
@@ -27,8 +25,7 @@ public class BuildingCollapse : MonoBehaviour
     public void HulkSmash()
     {
         if (hulkMode == true)
-        {   // z rotation == -65
-            Debug.Log("may smash");
+        {   
             doRotate = true;
         }
     }
