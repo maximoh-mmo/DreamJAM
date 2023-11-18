@@ -1125,7 +1125,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.5803922, g: 0.57254905, b: 0.5176471, a: 1}
+    m_HighlightedColor: {r: 1, g: 0.87058824, b: 0.8352941, a: 1}
     m_PressedColor: {r: 1, g: 0.87058824, b: 0.8352941, a: 1}
     m_SelectedColor: {r: 0.5803922, g: 0.57254905, b: 0.5176471, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -1714,7 +1714,7 @@ GameObject:
   - component: {fileID: 1384593372}
   - component: {fileID: 1384593371}
   - component: {fileID: 1384593370}
-  - component: {fileID: 1384593373}
+  - component: {fileID: 1384593374}
   m_Layer: 5
   m_Name: Credits
   m_TagString: Untagged
@@ -1785,9 +1785,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1384593373}
-        m_TargetAssemblyTypeName: SceneLoaderCredits, Assembly-CSharp
-        m_MethodName: LoadScene
+      - m_Target: {fileID: 657776485}
+        m_TargetAssemblyTypeName: Main_Menu, Assembly-CSharp
+        m_MethodName: Credits
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1835,7 +1835,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1384593368}
   m_CullTransparentMesh: 1
---- !u!114 &1384593373
+--- !u!114 &1384593374
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1844,7 +1844,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1384593368}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a18bf09f8919335419480c341fb6beab, type: 3}
+  m_Script: {fileID: 11500000, guid: 8e2eefa27482157499d8b5b443169ff1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1416533411

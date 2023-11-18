@@ -15,4 +15,9 @@ public class Main_Menu : MonoBehaviour
         Application.Quit();
     }
 
+    public void Credits()
+    {
+        SceneManager.LoadSceneAsync(5);
+    }
+
 }
